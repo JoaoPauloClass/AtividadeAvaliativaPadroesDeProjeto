@@ -1,9 +1,9 @@
 # Atividade Avaliativa - Padrões de Projeto em Java
 
-## Questão 1
+## Questão 2
 
 ### Padrão Escolhido
-- **Nome do Padrão:** Factory 
+- **Nome do Padrão:** Decorator 
 
 ### Justificativa do Padrão
 (Explique por que esse padrão foi selecionado para resolver o problema da questão, destacando as vantagens do uso e como ele se encaixa no contexto.)
