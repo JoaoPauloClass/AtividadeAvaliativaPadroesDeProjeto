@@ -18,7 +18,7 @@ O padrão Decorator permite adicionar funcionalidades ao relatório de forma inc
 ---
 
 ### Diagrama
-(Insira aqui o diagrama UML ou outro diagrama que represente a estrutura do padrão aplicado.)
+![Diagrama Questao1](https://github.com/JoaoPauloClass/AtividadeAvaliativaPadroesDeProjeto/blob/main/Questao%204/img/Decorator%20Questao%204.png)
 
 ---
 
