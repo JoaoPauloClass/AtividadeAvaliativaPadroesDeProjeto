@@ -16,7 +16,7 @@ O padrão Observer permite que os tópicos (subjects) mantenham uma lista de lei
 ---
 
 ### Diagrama
-![Diagrama Questao1](https://github.com/JoaoPauloClass/AtividadeAvaliativaPadroesDeProjeto/blob/main/Questao%201/img/Observer%20questao%203.png)
+![Diagrama Questao1](https://github.com/JoaoPauloClass/AtividadeAvaliativaPadroesDeProjeto/blob/main/Questao%203/img/Observer%20questao%203.png)
 
 ---
 
