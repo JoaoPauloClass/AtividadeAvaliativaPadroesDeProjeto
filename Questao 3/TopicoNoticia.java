@@ -29,7 +29,7 @@ public class TopicoNoticia implements ISubject {
     }
 
     @Override
-    public void notificar(String noticia) {
+    public void atualizar(String noticia) {
         System.out.println("\n Notificando " + inscritos.size() + " leitores do tópico '" + nome);
         for (IObserver leitor : inscritos) {
             leitor.notificar(noticia, nome);
@@ -42,7 +42,7 @@ public class TopicoNoticia implements ISubject {
 
         System.out.println("\nNOVA NOTÍCIA PUBLICADA em [" + nome + "]");
         System.out.println("Conteúdo: " + noticia);
-        notificar(noticia);
+        atualizar(noticia);
     }
 
     public void listarNoticias(){
