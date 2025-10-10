@@ -21,21 +21,20 @@ O padrão Factory Method foi escolhido porque o problema exige a criação de di
 
 ### Justificativa do Código
 O código implementa o padrão através de uma estrutura clara:
-Interfaces:
 
+#### Interfaces:
 ITransporte: Define o contrato ``processarTarifa()`` para todas as modalidades.
 ITransporteFactory: Define o método ``criarTransporte()`` para as factories.
 
-Implementações Concretas:
-
+#### Implementações Concretas:
 Terrestre: Calcula tarifa por distância (distância × 6.36).
+
 Aereo: Calcula tarifa por peso (peso × 20).
+
 Maritimo: Calcula tarifa volumétrica (comprimento × largura × altura × fator de cubagem).
 
-Factories:
-
+#### Factories:
 TerrestreFactory, AereoFactory e MaritimoFactory: Cada uma encapsula a criação de seu respectivo tipo de transporte com os parâmetros necessários.
 
-Cliente:
-
+#### Cliente:
 TarifaService: Processa qualquer transporte de forma genérica, recebendo uma factory e delegando a criação e cálculo através das interfaces. Isso demonstra polimorfismo e baixo acoplamento, permitindo trabalhar com qualquer tipo de transporte sem conhecer detalhes de implementação.
