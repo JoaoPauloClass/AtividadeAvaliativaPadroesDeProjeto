@@ -16,7 +16,7 @@ O padrão Observer permite que os tópicos (subjects) mantenham uma lista de lei
 ---
 
 ### Diagrama
-(Insira aqui o diagrama UML ou outro diagrama que represente a estrutura do padrão aplicado.)
+![Diagrama Questao1](https://github.com/JoaoPauloClass/AtividadeAvaliativaPadroesDeProjeto/blob/main/Questao%201/img/Observer%20questao%203.png)
 
 ---
 
