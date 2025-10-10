@@ -16,9 +16,7 @@ O padrão Factory Method foi escolhido porque o problema exige a criação de di
 ---
 
 ### Diagrama
-(Insira aqui o diagrama UML ou outro diagrama que represente a estrutura do padrão aplicado.)
-![Diagrama Questao1]("https://github.com/JoaoPauloClass/AtividadeAvaliativaPadroesDeProjeto/blob/main/Questao%201/img/Factory%20questao1.png")
-
+![Diagrama Questao1](https://github.com/JoaoPauloClass/AtividadeAvaliativaPadroesDeProjeto/blob/main/Questao%201/img/Factory%20questao1.png)
 ---
 
 ### Justificativa do Código
