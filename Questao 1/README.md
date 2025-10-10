@@ -17,6 +17,7 @@ O padrão Factory Method foi escolhido porque o problema exige a criação de di
 
 ### Diagrama
 (Insira aqui o diagrama UML ou outro diagrama que represente a estrutura do padrão aplicado.)
+![Diagrama Questao1]("")
 
 ---
 
