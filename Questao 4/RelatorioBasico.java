@@ -32,7 +32,7 @@ public class RelatorioBasico implements IRelatorio {
         return 5.0;
     }
 
-    protected List<Pedido> getPedidos() {
+    public List<Pedido> getPedidos() {
         return pedidos;
     }
 

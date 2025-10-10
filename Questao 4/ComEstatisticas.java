@@ -14,7 +14,7 @@ public class ComEstatisticas extends RelatorioDecorator {
         sb.append("ESTATÍSTICAS DE FATURAMENTO:\n");
         sb.append("═════════════════════════════════════════════════════════════════════════\n");
         
-        List<Pedido> pedidos = obterPedidos();
+        List<Pedido> pedidos = getPedidos();
         
         double total = pedidos.stream().mapToDouble(Pedido::getValor).sum();
         double media = pedidos.isEmpty() ? 0 : total / pedidos.size();
@@ -35,15 +35,9 @@ public class ComEstatisticas extends RelatorioDecorator {
         return relatorioBase.getCustoProcessamento() + 3.0;
     }
     
-    private List<Pedido> obterPedidos() {
-        IRelatorio temp = relatorioBase;
-        while (temp instanceof RelatorioDecorator) {
-            temp = ((RelatorioDecorator) temp).relatorioBase;
-        }
-        if (temp instanceof RelatorioBasico) {
-            return ((RelatorioBasico) temp).getPedidos();
-        }
-        return new ArrayList<>();
+    @Override
+    public List<Pedido> getPedidos() {
+        return relatorioBase.getPedidos();
     }
     
 }

@@ -16,9 +16,27 @@ O padrão Factory Method foi selecionado porque o cenário demanda a instanciaç
 ---
 
 ### Diagrama
-![Diagrama Questao1](https://github.com/JoaoPauloClass/AtividadeAvaliativaPadroesDeProjeto/blob/main/Questao%202/img/Factory%20Questao%202.png)
+![Diagrama Questao2](https://github.com/JoaoPauloClass/AtividadeAvaliativaPadroesDeProjeto/blob/main/Questao%202/img/Factory%20Questao%202.png)
 
 ---
 
 ### Justificativa do Código
-(Explique de forma breve como o código implementa o padrão, destacando os pontos principais da implementação.)
+O código implementa o padrão através de uma estrutura clara:
+Interfaces:
+
+IPagamento: Define o contrato processarPagamento(float) que retorna um boolean indicando sucesso ou falha.
+IPagamentoFactory: Define o método criarPagamento() para as factories.
+
+Implementações Concretas:
+
+CartaoCredito: Processa pagamento validando o número do cartão.
+Boleto: Processa pagamento com CPF e gera código de boleto aleatório.
+Pix: Processa pagamento com CPF e gera código PIX alfanumérico.
+
+Factories:
+
+CartaoCreditoFactory, BoletoFactory e PixFactory: Cada uma encapsula a criação de seu respectivo meio de pagamento com os parâmetros necessários (número do cartão ou CPF).
+
+Cliente:
+
+PagamentoService: Processa qualquer pagamento de forma genérica, recebendo uma factory e o valor da transação. Delega a criação do processador à factory e executa o pagamento através da interface, demonstrando polimorfismo e baixo acoplamento. O serviço não precisa conhecer qual meio de pagamento está sendo utilizado, apenas trabalha com as abstrações.

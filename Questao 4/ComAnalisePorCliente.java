@@ -1,8 +1,8 @@
 import java.util.List;
 
-class ComGrafico extends RelatorioDecorator {
+class ComAnalisePorCliente extends RelatorioDecorator {
     
-    public ComGrafico(IRelatorio relatorioBase) {
+    public ComAnalisePorCliente(IRelatorio relatorioBase) {
         super(relatorioBase);
     }
     
@@ -10,24 +10,26 @@ class ComGrafico extends RelatorioDecorator {
     public String gerar() {
         StringBuilder sb = new StringBuilder(relatorioBase.gerar());
         sb.append("\n");
-        sb.append("GRÁFICO DE VENDAS (últimos pedidos):\n");
+        sb.append("ANÁLISE POR CLIENTE:\n");
         sb.append("═════════════════════════════════════════════════════════════════════════\n");
         
         List<Pedido> pedidos = getPedidos();
         
-        if (pedidos.isEmpty()) {
-            sb.append("  Sem dados para exibir\n");
-        } else {
-            double maxValor = pedidos.stream().mapToDouble(Pedido::getValor).max().orElse(1);
-            int maxBarras = 50;
-            
-            for (Pedido pedido : pedidos) {
-                int barras = (int) ((pedido.getValor() / maxValor) * maxBarras);
-                sb.append(String.format("  Pedido #%-3d │", pedido.getId()));
-                sb.append("█".repeat(Math.max(0, barras)));
-                sb.append(String.format(" R$ %,.2f\n", pedido.getValor()));
-            }
-        }
+        // Agrupa por cliente
+        pedidos.stream()
+            .collect(java.util.stream.Collectors.groupingBy(
+                Pedido::getCliente,
+                java.util.stream.Collectors.summingDouble(Pedido::getValor)
+            ))
+            .entrySet().stream()
+            .sorted((e1, e2) -> Double.compare(e2.getValue(), e1.getValue()))
+            .forEach(entry -> {
+                long qtdPedidos = pedidos.stream()
+                    .filter(p -> p.getCliente().equals(entry.getKey()))
+                    .count();
+                sb.append(String.format("  Cliente:  %-20s │ %d pedido(s) │ R$ %,.2f\n",
+                    entry.getKey(), qtdPedidos, entry.getValue()));
+            });
         
         sb.append("═════════════════════════════════════════════════════════════════════════\n");
         
@@ -36,7 +38,7 @@ class ComGrafico extends RelatorioDecorator {
     
     @Override
     public double getCustoProcessamento() {
-        return relatorioBase.getCustoProcessamento() + 2.5;
+        return relatorioBase.getCustoProcessamento() + 3.5;
     }
     
     @Override

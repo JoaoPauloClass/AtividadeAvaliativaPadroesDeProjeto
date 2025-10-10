@@ -16,9 +16,23 @@ O padrão Observer permite que os tópicos (subjects) mantenham uma lista de lei
 ---
 
 ### Diagrama
-![Diagrama Questao1](https://github.com/JoaoPauloClass/AtividadeAvaliativaPadroesDeProjeto/blob/main/Questao%203/img/Observer%20questao%203.png)
+![Diagrama Questao3](https://github.com/JoaoPauloClass/AtividadeAvaliativaPadroesDeProjeto/blob/main/Questao%203/img/Observer%20questao%203.png)
 
 ---
 
 ### Justificativa do Código
-(Explique de forma breve como o código implementa o padrão, destacando os pontos principais da implementação.)
+Interfaces:
+
+ISubject: Define o contrato para os subjects com métodos inscrever(), desinscrever() e atualizar().
+IObserver: Define o contrato notificar(String, String) para os observers receberem atualizações.
+
+Subject Concreto:
+
+TopicoNoticia: Mantém uma lista de observers inscritos e outra de notícias publicadas. Implementa os métodos de inscrição/desinscrição gerenciando a lista de inscritos. O método publicarNoticia() adiciona a notícia e automaticamente chama atualizar(), que percorre a lista de inscritos notificando cada um através da interface IObserver.
+
+Observer Concreto:
+
+Leitor: Armazena seu nome e uma lista de notificações recebidas. Implementa notificar() para processar notificações dos tópicos, adicionando-as à sua lista pessoal. O método exibirNotificacoes() permite visualizar o histórico recebido.
+
+Funcionamento:
+A implementação demonstra o desacoplamento característico do padrão: os tópicos não conhecem a estrutura interna dos leitores, apenas invocam o método notificar() da interface. Isso permite que múltiplos leitores se inscrevam em múltiplos tópicos de forma flexível, e qualquer nova publicação dispara automaticamente as notificações para todos os interessados, eliminando a necessidade de controle manual.

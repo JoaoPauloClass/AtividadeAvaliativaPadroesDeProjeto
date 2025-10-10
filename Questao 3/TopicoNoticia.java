@@ -32,7 +32,7 @@ public class TopicoNoticia implements ISubject {
     public void atualizar(String noticia) {
         System.out.println("\n Notificando " + inscritos.size() + " leitores do tópico '" + nome);
         for (IObserver leitor : inscritos) {
-            leitor.notificar(noticia, nome);
+            leitor.notificar(nome, noticia);
         }
 
     }
