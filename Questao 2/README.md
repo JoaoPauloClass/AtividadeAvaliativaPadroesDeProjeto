@@ -16,7 +16,7 @@ O padrão Factory Method foi selecionado porque o cenário demanda a instanciaç
 ---
 
 ### Diagrama
-(Insira aqui o diagrama UML ou outro diagrama que represente a estrutura do padrão aplicado.)
+![Diagrama Questao1](https://github.com/JoaoPauloClass/AtividadeAvaliativaPadroesDeProjeto/blob/main/Questao%202/img/Factory%20Questao%202.png)
 
 ---
 
